@@ -18,6 +18,7 @@ AX_CXX_COMPILE_STDCXX([11], [noext], [mandatory])
 #AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
   Makefile
+  libjsonnet.pc
 ])
 AC_CHECK_HEADERS([alloca.h features.h libio.h stdc-predef.h stdio.h stdlib.h wchar.h])
 AM_MISSING_PROG(OD, od)

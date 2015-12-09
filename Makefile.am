@@ -14,7 +14,7 @@ libjsonnet_la_SOURCES += core/ast.h core/desugaring.h core/lexer.h \
                          core/parser.h core/state.h core/static_analysis.h \
                          core/static_error.h core/vm.h
 libjsonnet_HEADERS =$(top_srcdir)/include/libjsonnet.h
-libjsonnetdir = $(pkgincludedir)
+libjsonnetdir = $(includedir)
 
 BUILT_SOURCES = core/std.jsonnet.h
 CLEANFILES = core/std.jsonnet.h
@@ -23,3 +23,6 @@ core/std.jsonnet.h: stdlib/std.jsonnet
 		| $(TR) " " "\n" \
 		| $(GREP) -v "^$$" \
 		| $(TR) "\n" "," ) && echo "0") > $@
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libjsonnet.pc

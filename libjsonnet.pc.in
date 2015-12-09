@@ -1,0 +1,13 @@
+##################################
+# Pkg-Config file for libjsonnet #
+##################################
+
+Name: libjsonnet
+Description: Jsonnet - The data templating language
+URL: https://github.com/google/jsonnet
+Version: @VERSION@
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+includedir=@includedir@
+libdir=@libdir@
