@@ -12,18 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CONTEXT = header.html.jinja footer.html.jinja ../examples/*.jsonnet ../examples/*.jsonnet.golden
+CONTEXT = header.html.jinja footer.html.jinja \
+	../examples/*.jsonnet ../examples/*.jsonnet.golden
+
 PAGES = index.html \
-		userdocs.html tutorial.html demo.html stdlib.html \
-		casestudies.html casestudy_fractal.1.html casestudy_fractal.2.html casestudy_fractal.3.html \
-        language.html design.html comparisons.html spec.html \
-		implementation.html commandline.html bindings.html cpp.html javascript.html tests.html \
-		contributing.html
+	userdocs.html tutorial.html demo.html stdlib.html casestudies.html \
+	casestudy_fractal.1.html casestudy_fractal.2.html \
+	casestudy_fractal.3.html language.html design.html comparisons.html \
+	spec.html implementation.html commandline.html bindings.html cpp.html \
+	javascript.html tests.html contributing.html
 
 all: $(PAGES)
 
 %.html: %.html.jinja $(CONTEXT) render.py
-	python render.py $< $@
+	$(PYTHON_BIN) render.py $< $@
 
-clean:
-	rm -vf $(PAGES)
+CLEANFILES = $(PAGES)

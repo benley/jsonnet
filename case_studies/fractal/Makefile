@@ -23,7 +23,7 @@ all_artifacts: $(ALL_IMAGES:.packer.json=.packer.done)
 
 %.packer.done: %.packer.json
 	@echo "======== BUILDING IMAGE: $(basename $(basename $<)) ========"
-	time packer build -force $< > $(basename $@).log 2>&1 
+	time packer build -force $< > $(basename $@).log 2>&1
 	cp $< $@
 
 terraform.done: terraform.tf
