@@ -14,3 +14,11 @@ bind(
     name = "gtest_main",
     actual = "@gmock_archive//:gtest_main",
 )
+
+new_http_archive(
+    name = "cpython",
+    build_file = "cpython.BUILD",
+    url = "https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz",
+    sha256 = "3cb522d17463dfa69a155ab18cffa399b358c966c0363d6c8b5b3bf1384da4b6",
+    strip_prefix = "Python-2.7.12",
+)
